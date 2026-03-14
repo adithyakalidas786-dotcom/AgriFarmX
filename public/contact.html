@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AgriFarmX</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-form {
+            display: grid;
+            gap: 15px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: var(--inst-primary);
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        .btn-submit {
+            background-color: var(--inst-primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: var(--inst-secondary);
+        }
+        #form-status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .success { background-color: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+        .error { background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Navigation Strip -->
+    <div class="top-strip">
+        <div class="container strip-content">
+            <div class="strip-left">
+                <a href="mailto:contact@agrifarmx.com"><i class="fa-solid fa-envelope"></i> contact@agrifarmx.com</a>
+                <span class="divider">|</span>
+                <a href="tel:9123565887"><i class="fa-solid fa-phone"></i> +91 9123565887</a>
+            </div>
+            <div class="strip-right">
+                <a href="#">Alumni</a>
+                <span class="divider">|</span>
+                <a href="#">Careers</a>
+                <span class="divider">|</span>
+                <a href="#">Portal Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="brand">
+                <img src="logo.jpg" alt="AgriFarmX Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>AgriFarmX</h1>
+                    <h2>Professional Agricultural Consultancy</h2>
+                    <p class="accreditation">Recognized by Leading Agricultural Boards</p>
+                </div>
+            </div>
+            <div class="header-action">
+                <div class="contact-box">
+                    <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
+                    <div class="contact-text">
+                        <span>Consult Now</span>
+                        <strong>+91 9123565887</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <div class="container">
+            <button class="menu-toggle" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i> Menu</button>
+            <ul id="nav-list">
+                <li><a href="index.html"><i class="fa-solid fa-home"></i> Home</a></li>
+                <li><a href="about.html">About Institution</a></li>
+                <li><a href="services.html">Consultancy Services</a></li>
+                <li><a href="experts.html">Our Experts (Faculty)</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Layout -->
+    <main class="content-wrapper container" style="margin-top: 30px;">
+
+        <!-- Left Sidebar -->
+        <aside class="sidebar-left">
+            <div class="panel contact-panel">
+                <div class="panel-heading">Direct Contact</div>
+                <div class="panel-content">
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <div><strong>General Enquiry:</strong><br>+91 9123565887</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <div><strong>Email:</strong><br>contact@agrifarmx.com</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div><strong>Office:</strong><br>AgriFarmX Consultancy Center, India</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Content -->
+        <section class="content-center">
+            <article class="welcome-box">
+                <h2 class="section-title">Send Us a Message</h2>
+                <div class="welcome-text">
+                    <p>Have a specific query or want to book a consultancy session? Fill out the form below and our experts will get back to you within 24 hours.</p>
+                    
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Interested Service</label>
+                            <select id="service" name="service">
+                                <option value="crop">Crop Management</option>
+                                <option value="soil">Soil Microbiology</option>
+                                <option value="pest">Pest Control</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Inquiry</button>
+                    </form>
+                    <div id="form-status"></div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar-right">
+            <div class="panel vision-panel">
+                <div class="panel-heading">Consultation Hours</div>
+                <div class="panel-content">
+                    <p style="font-size: 0.9rem;"><strong>Mon - Fri:</strong> 9:00 AM - 6:00 PM</p>
+                    <p style="font-size: 0.9rem;"><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
+                    <p style="font-size: 0.9rem;"><strong>Sunday:</strong> Closed</p>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3 class="footer-title">AgriFarmX</h3>
+                <img src="logo.jpg" alt="AgriFarmX Logo" style="height: 60px; background: white; padding: 5px; border-radius: 4px; margin-bottom: 15px;">
+                <p>A professional agricultural consultancy uniting academic excellence with practical farming solutions.</p>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html"><i class="fa-solid fa-caret-right"></i> About Us</a></li>
+                    <li><a href="services.html"><i class="fa-solid fa-caret-right"></i> Consultancy Services</a></li>
+                    <li><a href="experts.html"><i class="fa-solid fa-caret-right"></i> Our Consultants</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-caret-right"></i> Contact Details</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">Reach Us</h3>
+                <p><i class="fa-solid fa-location-dot"></i> AgriFarmX Consultancy Center, India</p>
+                <p><i class="fa-solid fa-envelope"></i> contact@agrifarmx.com</p>
+                <p><i class="fa-solid fa-phone"></i> +91 9123565887</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 AgriFarmX Professional Agricultural Consultancy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const status = document.getElementById('form-status');
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value
+            };
+
+            status.textContent = 'Sending...';
+            status.style.display = 'block';
+            status.className = '';
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    status.textContent = 'Thank you! Your inquiry has been sent successfully.';
+                    status.classList.add('success');
+                    document.getElementById('contact-form').reset();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (err) {
+                status.textContent = 'Error: ' + err.message;
+                status.classList.add('error');
+            }
+        });
+    </script>
+</body>
+</html>
