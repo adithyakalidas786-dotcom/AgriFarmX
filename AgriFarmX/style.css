@@ -43,7 +43,7 @@ ul {
 }
 
 .container {
-    max-width: 1140px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -447,9 +447,9 @@ ul {
 
 /* Directory / Faculty Profile List */
 .directory-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
 .directory-card {
@@ -457,22 +457,30 @@ ul {
     align-items: center;
     background-color: #fff;
     border: 1px solid #e2e8f0;
-    padding: 15px;
+    padding: 25px;
     border-left: 5px solid var(--inst-primary);
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.directory-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 .avatar {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     background-color: #f1f5f9;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
+    font-size: 2.22rem;
     color: #94a3b8;
-    margin-right: 20px;
+    margin-right: 25px;
     flex-shrink: 0;
+    border: 1px solid #e2e8f0;
 }
 
 .details {
@@ -494,23 +502,26 @@ ul {
 }
 
 .details .designation {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
 }
 
 .contact {
     margin-left: 20px;
+    flex-shrink: 0;
 }
 
 .btn-call {
     display: inline-block;
-    background-color: #f1f5f9;
+    background-color: #f8fafc;
     color: var(--inst-primary);
-    padding: 8px 12px;
-    border-radius: 4px;
+    padding: 15px 25px;
+    border-radius: 8px;
     font-weight: 700;
-    font-size: 0.9rem;
-    border: 1px solid #cbd5e1;
+    font-size: 1.1rem;
+    border: 1px solid var(--inst-primary);
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .btn-call:hover {
@@ -731,4 +742,87 @@ ul {
         border-top-width: 15px;
         border-bottom-width: 15px;
     }
+}
+
+/* ===== CONTACT FORM STYLES ===== */
+.contact-form {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--inst-primary);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--inst-secondary);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.btn-submit {
+    background-color: var(--inst-primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-submit:hover {
+    background-color: var(--panel-header-bg);
+}
+
+#form-status {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+}
+
+#form-status.success {
+    display: block;
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+#form-status.error {
+    display: block;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
 }

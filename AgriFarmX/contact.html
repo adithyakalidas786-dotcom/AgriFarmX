@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AgriFarmX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Top Navigation Strip -->
+    <div class="top-strip">
+        <div class="container strip-content">
+            <div class="strip-left">
+                <a href="mailto:contact@agrifarmx.com"><i class="fa-solid fa-envelope"></i> contact@agrifarmx.com</a>
+                <span class="divider">|</span>
+                <a href="tel:9123565887"><i class="fa-solid fa-phone"></i> +91 9123565887</a>
+            </div>
+            <div class="strip-right">
+                <a href="#">Alumni</a>
+                <span class="divider">|</span>
+                <a href="#">Careers</a>
+                <span class="divider">|</span>
+                <a href="#">Portal Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="brand">
+                <img src="logo.jpg" alt="AgriFarmX Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>AgriFarmX</h1>
+                    <h2>Professional Agricultural Consultancy</h2>
+                    <p class="accreditation">Recognized by Leading Agricultural Boards</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul id="nav-list">
+                <li><a href="index.html"><i class="fa-solid fa-home"></i> Home</a></li>
+                <li><a href="about.html">About Institution</a></li>
+                <li><a href="services.html">Consultancy Services</a></li>
+                <li><a href="experts.html">Our Experts</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-wrapper container">
+        <article class="welcome-box">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="welcome-text" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div>
+                    <h3>Office Address</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> AgriFarmX Consultancy Center<br>Main Road, Agriculture Hub<br>Tamil Nadu, India</p>
+                    
+                    <h3 style="margin-top: 25px;">General Enquiries</h3>
+                    <p><i class="fa-solid fa-envelope"></i> contact@agrifarmx.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 9123565887</p>
+                </div>
+                <div>
+                    <h3>Send us a Message</h3>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="general">General Inquiry</option>
+                                <option value="consultancy">Consultancy Service</option>
+                                <option value="expert">Expert Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required placeholder="How can we help you?" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                    <div id="form-status"></div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 AgriFarmX Professional Agricultural Consultancy. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

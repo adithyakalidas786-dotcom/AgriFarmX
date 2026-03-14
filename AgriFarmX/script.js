@@ -42,5 +42,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    /* --- CONTACT FORM SUBMISSION --- */
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
 
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Show loading state
+            formStatus.textContent = "Sending message...";
+            formStatus.className = "";
+            formStatus.style.display = "block";
+            
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    formStatus.textContent = result.message || "Thank you! Your message has been sent.";
+                    formStatus.className = "success";
+                    contactForm.reset();
+                } else {
+                    formStatus.textContent = result.error || "Something went wrong. Please try again later.";
+                    formStatus.className = "error";
+                }
+            } catch (error) {
+                console.error("Form error:", error);
+                formStatus.textContent = "Unable to connect to the server. Please try again later.";
+                formStatus.className = "error";
+            }
+        });
+    }
 });
