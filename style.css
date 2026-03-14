@@ -1,0 +1,734 @@
+/* ===== GLOBAL INSTITUTIONAL STYLES (Professional + MZCET Layout) ===== */
+:root {
+    --inst-primary: #003366;   
+    --inst-secondary: #22c55e; 
+    --inst-bg-light: #f4f6f9;
+    --text-dark: #333333;
+    --text-muted: #555555;
+    --border-color: #e0e0e0;
+    --panel-header-bg: #002244; 
+    --panel-border: #d1d5db;
+    
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Roboto', sans-serif;
+    
+    --shadow-soft: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--inst-bg-light); /* Off-white typical for institution backgrounds */
+}
+
+a {
+    text-decoration: none;
+    color: var(--inst-primary); 
+    transition: all 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ===== TOP INFO STRIP ===== */
+.top-strip {
+    background-color: var(--inst-primary);
+    color: #ffffff;
+    font-size: 0.85rem;
+    padding: 8px 0;
+    border-bottom: 3px solid var(--inst-secondary); /* Accent edge */
+}
+
+.strip-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.strip-left a, .strip-right a {
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.strip-left a:hover, .strip-right a:hover {
+    color: var(--inst-secondary);
+    opacity: 1;
+}
+
+.strip-left i {
+    margin-right: 5px;
+    color: var(--inst-secondary);
+}
+
+.divider {
+    margin: 0 10px;
+    opacity: 0.4;
+}
+
+/* ===== MAIN HEADER ===== */
+.main-header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Slight shadow below header */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo {
+    height: 85px;
+    width: auto;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.brand-text h1 {
+    font-family: var(--font-heading);
+    color: var(--inst-primary);
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 2px;
+}
+
+.brand-text h2 {
+    font-size: 1.1rem;
+    color: #b91c1c; /* Deep red typical for college subheads */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+}
+
+.accreditation {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.contact-box {
+    display: flex;
+    align-items: center;
+    background-color: #f0fdf4; /* Very light green tint */
+    border: 1px solid #bbf7d0;
+    padding: 10px 20px;
+    border-radius: 6px;
+    gap: 15px;
+}
+
+.whatsapp-icon {
+    font-size: 2.2rem;
+    color: #25D366;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-text span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.contact-text strong {
+    font-size: 1.25rem;
+    color: var(--inst-primary);
+}
+
+/* ===== NAVIGATION BLOCK (MZCET Style) ===== */
+.main-nav {
+    background-color: var(--inst-primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
+}
+
+.main-nav .container {
+    padding: 0;
+}
+
+#nav-list {
+    display: flex;
+    width: 100%;
+}
+
+#nav-list li {
+    flex-grow: 1;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+#nav-list li:last-child {
+    border-right: none;
+}
+
+#nav-list a {
+    display: block;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 15px 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#nav-list a i {
+    margin-right: 8px;
+    opacity: 0.8;
+}
+
+#nav-list a:hover, #nav-list a.active {
+    background-color: #ffb703; /* MZCN style vibrant hover */
+    color: var(--inst-primary);
+}
+
+#nav-list a:hover i, #nav-list a.active i {
+    opacity: 1;
+}
+
+.menu-toggle {
+    display: none;
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* ===== FLASH NEWS SETTING ===== */
+.flash-news {
+    display: flex;
+    margin: 15px auto;
+    background-color: #fff7ed; /* Light warning tint */
+    border: 1px solid #fed7aa;
+    padding: 0;
+    align-items: stretch;
+}
+
+.flash-label {
+    background-color: #dc2626; /* Vibrant Red */
+    color: white;
+    font-weight: 700;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    position: relative;
+}
+
+.flash-label::after {
+    content: '';
+    position: absolute;
+    right: -12px;
+    top: 0;
+    border-top: 20px solid transparent;
+    border-left: 12px solid #dc2626;
+    border-bottom: 21px solid transparent;
+    z-index: 2;
+}
+
+.flash-scroll {
+    flex-grow: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    font-weight: 600;
+    color: var(--inst-primary);
+}
+
+.news-item {
+    margin-right: 60px;
+}
+
+.news-item i {
+    color: #dc2626;
+    margin-right: 8px;
+}
+
+/* ===== HERO BANNER ===== */
+.hero-banner {
+    position: relative;
+    padding: 0 !important;
+    margin-bottom: 30px;
+    border: 5px solid #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.banner-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.banner-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 51, 102, 0.9); /* Deep blue overlay block */
+    padding: 20px 30px;
+    border-left: 6px solid #ffb703;
+    max-width: 600px;
+}
+
+.banner-caption h3 {
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* ===== MAIN 3-COLUMN CONTENT ===== */
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 260px 1fr 300px; /* Rigid college dimensions */
+    gap: 25px;
+    padding: 0 15px 50px;
+}
+
+/* Shared Panel/Box Styles */
+.panel {
+    background: #ffffff;
+    border: 1px solid var(--panel-border);
+    margin-bottom: 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.panel-heading {
+    background-color: var(--panel-header-bg);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 12px 15px;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    border-bottom: 4px solid var(--inst-secondary);
+}
+
+.panel-content {
+    padding: 15px;
+}
+
+/* Left Sidebar - Vertical Nav */
+.side-nav li {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.side-nav li:last-child {
+    border-bottom: none;
+}
+
+.side-nav a {
+    display: block;
+    padding: 12px 15px;
+    color: #475569;
+    font-weight: 600;
+}
+
+.side-nav a i {
+    color: var(--inst-secondary);
+    margin-right: 10px;
+}
+
+.side-nav a:hover {
+    background-color: #f8fafc;
+    color: var(--inst-primary);
+    padding-left: 20px;
+}
+
+/* Quote Panel specifics */
+.vision-panel .panel-heading {
+    border-bottom-color: #ffb703;
+}
+
+.quote-icon {
+    font-size: 2rem;
+    color: #e2e8f0;
+    margin-bottom: 15px;
+}
+
+.quote-text {
+    font-family: var(--font-heading);
+    color: var(--inst-primary);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Center Content */
+.content-center article {
+    background: white;
+    border: 1px solid var(--panel-border);
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-soft);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--inst-primary);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #cbd5e1;
+    padding-bottom: 10px;
+}
+
+.welcome-text p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.7;
+}
+
+/* Grid within Center Column */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.service-item {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid var(--inst-secondary);
+    transition: 0.3s;
+}
+
+.service-item:hover {
+    box-shadow: var(--shadow-soft);
+    border-top-color: var(--inst-primary);
+}
+
+.service-item i {
+    font-size: 2rem;
+    color: var(--inst-secondary);
+    margin-bottom: 15px;
+}
+
+.service-item h4 {
+    color: var(--text-dark);
+}
+
+/* Directory / Faculty Profile List */
+.directory-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.directory-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    border-left: 5px solid var(--inst-primary);
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    background-color: #f1f5f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #94a3b8;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.details {
+    flex-grow: 1;
+}
+
+.details .name {
+    font-family: var(--font-heading);
+    color: var(--inst-primary);
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+}
+
+.details .qualification {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--inst-secondary);
+    text-transform: uppercase;
+}
+
+.details .designation {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.contact {
+    margin-left: 20px;
+}
+
+.btn-call {
+    display: inline-block;
+    background-color: #f1f5f9;
+    color: var(--inst-primary);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 1px solid #cbd5e1;
+}
+
+.btn-call:hover {
+    background-color: var(--inst-primary);
+    color: #fff;
+}
+
+/* Right Sidebar */
+/* Vertical Marquee Notice Board */
+.notice-board .marquee-container {
+    padding: 15px;
+    background-color: #fafbfc;
+}
+
+.notice-item {
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 15px;
+}
+
+.date-badge {
+    display: inline-block;
+    background-color: #dc2626;
+    color: #fff;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 3px;
+    margin-bottom: 8px;
+}
+
+.notice-item a {
+    display: block;
+    color: #334155;
+    font-weight: 600;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.notice-item a:hover {
+    color: var(--inst-primary);
+    text-decoration: underline;
+}
+
+.new-icon {
+    height: 18px;
+    vertical-align: middle;
+    margin-top: 5px;
+}
+
+/* Contacts Panel */
+.contact-list li {
+    display: flex;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #334155;
+}
+
+.contact-list li i {
+    color: var(--inst-primary);
+    margin-right: 15px;
+    margin-top: 4px;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* ===== FOOTER ===== */
+.main-footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding-top: 50px;
+    border-top: 5px solid var(--inst-primary);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-title {
+    color: #f8fafc;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #334155;
+    position: relative;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--inst-secondary);
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #334155;
+    padding-bottom: 8px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+}
+
+.footer-links i {
+    color: var(--inst-secondary);
+    margin-right: 8px;
+}
+
+.footer-col p {
+    margin-bottom: 15px;
+}
+
+.footer-col i {
+    color: var(--inst-secondary);
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    background-color: #020617;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVE FIXES ===== */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        grid-template-columns: 240px 1fr !important; 
+    }
+    .sidebar-right {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .strip-left {
+        display: none;
+    }
+    
+    .strip-content {
+        justify-content: flex-end;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .contact-box {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    #nav-list {
+        display: none;
+        flex-direction: column;
+        background-color: #001f3f;
+    }
+    
+    #nav-list.active {
+        display: flex;
+    }
+    
+    #nav-list li {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        text-align: left;
+    }
+    
+    .content-wrapper {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .sidebar-right {
+        grid-template-columns: 1fr;
+    }
+    
+    .directory-card {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 25px;
+    }
+    
+    .directory-card .avatar {
+        margin: 0 auto 15px;
+    }
+    
+    .directory-card .contact {
+        margin: 15px 0 0 0;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .flash-label {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+    
+    .flash-label::after {
+        border-top-width: 15px;
+        border-bottom-width: 15px;
+    }
+}
