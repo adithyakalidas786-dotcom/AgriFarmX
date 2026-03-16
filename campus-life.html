@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Life - AgriFarmX</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Top Strip -->
+    <div class="top-strip">
+        <div class="container strip-content">
+            <div class="strip-left">
+                <a href="mailto:contact@agrifarmx.com"><i class="fa-solid fa-envelope"></i> contact@agrifarmx.com</a>
+                <span class="divider">|</span>
+                <a href="tel:9123565887"><i class="fa-solid fa-phone"></i> +91 9123565887</a>
+            </div>
+            <div class="strip-right">
+                <a href="#">Alumni</a>
+                <span class="divider">|</span>
+                <a href="#">Careers</a>
+                <span class="divider">|</span>
+                <a href="#">Portal Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="brand">
+                <img src="logo.jpg" alt="AgriFarmX Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>AgriFarmX</h1>
+                    <h2>Professional Agricultural Consultancy</h2>
+                    <p class="accreditation">Recognized by Leading Agricultural Boards</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <div class="container">
+            <button class="menu-toggle" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i> Menu</button>
+            <ul id="nav-list">
+                <li><a href="index.html"><i class="fa-solid fa-house nav-icon home-icon"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle">
+                        <i class="fa-solid fa-building-columns nav-icon about-icon"></i> About Us <i class="fa-solid fa-chevron-down chevron"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="institutional-profile.html"><i class="fa-solid fa-hotel"></i> Institutional Profile</a></li>
+                        <li><a href="vision-mission.html"><i class="fa-solid fa-eye"></i> Vision & Mission</a></li>
+                        <li><a href="leadership.html"><i class="fa-solid fa-users-gear"></i> Leadership</a></li>
+                        <li><a href="organogram.html"><i class="fa-solid fa-sitemap"></i> Organogram</a></li>
+                    </ul>
+                </li>
+                <li><a href="campus-life.html" class="active"><i class="fa-solid fa-leaf nav-icon campus-icon"></i> Campus Life</a></li>
+                <li><a href="academics.html"><i class="fa-solid fa-user-graduate nav-icon academics-icon"></i> Academics</a></li>
+                <li><a href="info-corner.html"><i class="fa-solid fa-book-open nav-icon info-icon"></i> Info Corner</a></li>
+                <li><a href="clubs-cells.html"><i class="fa-solid fa-handshake nav-icon clubs-icon"></i> Clubs & Cells</a></li>
+                <li><a href="admissions.html"><i class="fa-solid fa-pen-to-square nav-icon admissions-icon"></i> Admissions</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-phone nav-icon contact-icon"></i> Contact</a></li>
+                <li><a href="feedback.html"><i class="fa-solid fa-comment-dots nav-icon feedback-icon"></i> Feedback</a></li>
+                <li><a href="portals.html"><i class="fa-solid fa-link nav-icon portals-icon"></i> Portals</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="content-wrapper container">
+        <section class="content-center" style="grid-column: 1 / -1;">
+            <article>
+                <h2 class="section-title">Campus Life</h2>
+                <div class="welcome-text">
+                    <p>Experience the vibrant life at AgriFarmX Center. From practical field workshops to community events, there's always something happening.</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
+                        <div style="background: #f1f5f9; padding: 20px; border-radius: 8px;">
+                            <h4>Field Workshops</h4>
+                            <p>Hands-on sessions in our demo farms.</p>
+                        </div>
+                        <div style="background: #f1f5f9; padding: 20px; border-radius: 8px;">
+                            <h4>Agricultural Seminars</h4>
+                            <p>Learn from international guest speakers.</p>
+                        </div>
+                        <div style="background: #f1f5f9; padding: 20px; border-radius: 8px;">
+                            <h4>Community Projects</h4>
+                            <p>Engaging directly with local farming communities.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container text-center" style="padding: 20px;">
+            <p>&copy; 2026 AgriFarmX. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

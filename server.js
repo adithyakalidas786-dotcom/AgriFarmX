@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 
 // API Routes
 app.post('/api/contact', (req, res) => {
@@ -16,8 +16,6 @@ app.post('/api/contact', (req, res) => {
     
     console.log('Received Inquiry:', { name, email, phone, service, message });
 
-    // In a real app, you might save this to a database or send an email
-    // For now, let's save it to a JSON file
     const inquiry = {
         id: Date.now(),
         name,
@@ -30,7 +28,6 @@ app.post('/api/contact', (req, res) => {
 
     const dataPath = path.join(__dirname, 'data', 'inquiries.json');
     
-    // Ensure data directory exists
     if (!fs.existsSync(path.join(__dirname, 'data'))) {
         fs.mkdirSync(path.join(__dirname, 'data'));
     }
@@ -52,25 +49,29 @@ app.post('/api/contact', (req, res) => {
 });
 
 // Serve the separate pages
-app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'about.html'));
+app.get('/institutional-profile', (req, res) => {
+    res.sendFile(path.join(__dirname, 'institutional-profile.html'));
 });
 
-app.get('/services', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'services.html'));
+app.get('/vision-mission', (req, res) => {
+    res.sendFile(path.join(__dirname, 'vision-mission.html'));
 });
 
-app.get('/experts', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'experts.html'));
+app.get('/leadership', (req, res) => {
+    res.sendFile(path.join(__dirname, 'leadership.html'));
+});
+
+app.get('/organogram', (req, res) => {
+    res.sendFile(path.join(__dirname, 'organogram.html'));
 });
 
 app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+    res.sendFile(path.join(__dirname, 'contact.html'));
 });
 
-// Fallback to index.html for unknown routes (optional)
+// Fallback to index.html
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(PORT, () => {

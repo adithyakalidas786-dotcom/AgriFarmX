@@ -63,16 +63,25 @@
         </div>
     </header>
 
-    <!-- Navigation Menu (Block Style) -->
+    <!-- Navigation Menu (Modern Style with Dropdowns) -->
     <nav class="main-nav">
         <div class="container">
             <button class="menu-toggle" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i> Menu</button>
             <ul id="nav-list">
-                <li><a href="#home" class="active"><i class="fa-solid fa-home"></i> Home</a></li>
-                <li><a href="#about">About Institution</a></li>
-                <li><a href="#services">Consultancy Services</a></li>
-                <li><a href="#consultants">Our Experts (Faculty)</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="index.html" class="active"><i class="fa-solid fa-house nav-icon home-icon"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle">
+                        <i class="fa-solid fa-building-columns nav-icon about-icon"></i> About Us <i class="fa-solid fa-chevron-down chevron"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="institutional-profile.html"><i class="fa-solid fa-hotel"></i> Institutional Profile</a></li>
+                        <li><a href="vision-mission.html"><i class="fa-solid fa-eye"></i> Vision & Mission</a></li>
+                        <li><a href="leadership.html"><i class="fa-solid fa-users-gear"></i> Leadership</a></li>
+                        <li><a href="organogram.html"><i class="fa-solid fa-sitemap"></i> Organogram</a></li>
+                    </ul>
+                </li>
+                <li><a href="clubs-cells.html"><i class="fa-solid fa-handshake nav-icon clubs-icon"></i> Clubs & Cells</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-phone nav-icon contact-icon"></i> Contact</a></li>
             </ul>
         </div>
     </nav>

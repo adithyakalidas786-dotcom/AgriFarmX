@@ -163,13 +163,14 @@ ul {
     color: var(--inst-primary);
 }
 
-/* ===== NAVIGATION BLOCK (MZCET Style) ===== */
+/* ===== NAVIGATION BLOCK (Modern Light Style) ===== */
 .main-nav {
-    background-color: var(--inst-primary);
+    background: #ffffff;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-bottom: 1px solid #eef2f6;
 }
 
 .main-nav .container {
@@ -179,47 +180,172 @@ ul {
 #nav-list {
     display: flex;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #nav-list li {
     flex-grow: 1;
-    border-right: 1px solid rgba(255,255,255,0.1);
-    text-align: center;
-}
-
-#nav-list li:last-child {
-    border-right: none;
+    position: relative;
+    list-style: none;
 }
 
 #nav-list a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 18px 8px;
+    text-transform: capitalize;
+    letter-spacing: 0.2px;
+    transition: all 0.3s ease;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Light Animation Effect */
+#nav-list a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: skewX(-25deg);
+}
+
+#nav-list a:hover::after {
+    left: 150%;
+}
+
+#nav-list a:hover {
+    background-color: #f8fafc;
+    color: #003366;
+    box-shadow: inset 0 0 10px rgba(0, 51, 102, 0.05);
+}
+
+#nav-list a.active {
+    border-bottom: 3px solid #ffb703;
+    background: rgba(255, 183, 3, 0.08);
+    color: #003366;
+    font-weight: 700;
+}
+
+/* Enhanced Light/Glow Animation */
+#nav-list li::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #ffb703;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px #ffb703;
+}
+
+#nav-list li:hover::before {
+    width: 80%;
+}
+
+.nav-icon {
+    font-size: 1.1rem;
+}
+
+/* Icon Colors from Image */
+.home-icon, .about-icon { color: #003366; }
+.campus-icon { color: #84cc16; }
+.academics-icon { color: #f59e0b; }
+.info-icon { color: #eab308; }
+.clubs-icon { color: #facc15; }
+.admissions-icon { color: #fbbf24; }
+.contact-icon { color: #eab308; }
+.feedback-icon { color: #f59e0b; }
+.portals-icon { color: #fbbf24; }
+
+.chevron {
+    font-size: 0.7rem;
+    margin-left: 2px;
+    transition: transform 0.3s;
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 250px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 0 0 12px 12px;
+    display: none;
+    z-index: 1001;
+    padding: 10px 0;
+    animation: fadeInDown 0.3s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown:hover .dropdown-menu {
     display: block;
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 15px 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-#nav-list a i {
-    margin-right: 8px;
-    opacity: 0.8;
+.dropdown:hover .chevron {
+    transform: rotate(180deg);
 }
 
-#nav-list a:hover, #nav-list a.active {
-    background-color: #ffb703; /* MZCN style vibrant hover */
-    color: var(--inst-primary);
+.dropdown-menu li {
+    width: 100%;
 }
 
-#nav-list a:hover i, #nav-list a.active i {
-    opacity: 1;
+.dropdown-menu li a {
+    justify-content: flex-start !important;
+    padding: 12px 20px !important;
+    font-size: 0.95rem !important;
+    color: #333 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+.dropdown-menu li a i {
+    width: 25px;
+    color: #f59e0b; /* Yellow icons in dropdown as per image */
+    margin-right: 10px;
+}
+
+.dropdown-menu li a.active {
+    background-color: #f1f5f9 !important;
+    color: #003366 !important;
+    border-left: 4px solid #f59e0b !important;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f1f5f9 !important;
+    color: #003366 !important;
+    padding-left: 25px !important;
 }
 
 .menu-toggle {
     display: none;
     width: 100%;
     padding: 15px;
-    background: transparent;
+    background: var(--inst-primary);
     color: #fff;
     border: none;
     font-size: 1.1rem;
@@ -611,30 +737,73 @@ ul {
     width: 40px;
     height: 2px;
     background-color: var(--inst-secondary);
+    transition: width 0.4s ease;
+}
+
+.footer-col:hover .footer-title::after {
+    width: 80px;
+    box-shadow: 0 0 10px var(--inst-secondary);
 }
 
 .footer-links li {
     margin-bottom: 10px;
     border-bottom: 1px dotted #334155;
     padding-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.footer-links li:hover {
+    border-bottom-color: var(--inst-secondary);
+    padding-left: 8px;
 }
 
 .footer-links a {
     color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.footer-links i {
+.footer-links a i {
     color: var(--inst-secondary);
-    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.footer-links a:hover i {
+    transform: translateX(5px);
+    color: #ffffff;
 }
 
 .footer-col p {
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.footer-col p:hover {
+    color: #ffffff;
+    transform: translateX(5px);
 }
 
 .footer-col i {
     color: var(--inst-secondary);
-    margin-right: 10px;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.footer-col p:hover i {
+    color: #ffffff;
+    filter: drop-shadow(0 0 5px var(--inst-secondary));
+    transform: scale(1.2);
 }
 
 .footer-bottom {

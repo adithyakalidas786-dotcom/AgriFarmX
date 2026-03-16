@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AgriFarmX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header"><div class="container"><h1>Contact AgriFarmX</h1></div></header>
+    <nav class="main-nav">
+        <div class="container">
+            <ul id="nav-list">
+                <li><a href="index.html"><i class="fa-solid fa-house nav-icon home-icon"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle">
+                        <i class="fa-solid fa-building-columns nav-icon about-icon"></i> About Us <i class="fa-solid fa-chevron-down chevron"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="institutional-profile.html"><i class="fa-solid fa-hotel"></i> Institutional Profile</a></li>
+                        <li><a href="vision-mission.html"><i class="fa-solid fa-eye"></i> Vision & Mission</a></li>
+                        <li><a href="leadership.html"><i class="fa-solid fa-users-gear"></i> Leadership</a></li>
+                        <li><a href="organogram.html"><i class="fa-solid fa-sitemap"></i> Organogram</a></li>
+                    </ul>
+                </li>
+                <li><a href="clubs-cells.html"><i class="fa-solid fa-handshake nav-icon clubs-icon"></i> Clubs & Cells</a></li>
+                <li><a href="contact.html" class="active"><i class="fa-solid fa-phone nav-icon contact-icon"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container" style="padding: 40px 15px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+            <div>
+                <h2>Get In Touch</h2>
+                <p>Have questions? We're here to help you grow.</p>
+                <ul class="contact-list" style="margin-top: 20px; list-style: none; padding: 0;">
+                    <li style="margin-bottom: 20px;"><i class="fa-solid fa-location-dot" style="font-size: 1.5rem; color: #003366;"></i> AgriFarmX Consultancy Center, India</li>
+                    <li style="margin-bottom: 20px;"><i class="fa-solid fa-envelope" style="font-size: 1.5rem; color: #003366;"></i> contact@agrifarmx.com</li>
+                    <li style="margin-bottom: 20px;"><i class="fa-solid fa-phone" style="font-size: 1.5rem; color: #003366;"></i> +91 9123565887</li>
+                </ul>
+            </div>
+            <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eef2f6;">
+                <h3>Send a Message</h3>
+                <form action="#" style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                    <input type="text" placeholder="Your Name" style="padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
+                    <input type="email" placeholder="Your Email" style="padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
+                    <textarea placeholder="Your Message" rows="5" style="padding: 12px; border: 1px solid #ddd; border-radius: 6px;"></textarea>
+                    <button type="button" class="btn-call" style="background: #003366; color: white; padding: 12px; border: none; cursor: pointer;">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
